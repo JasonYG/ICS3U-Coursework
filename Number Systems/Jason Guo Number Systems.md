@@ -64,9 +64,12 @@ For example, to convert the hexadecimal number ABCDEF<sub>16</sub> to decimal, w
 | --- | --- | --- | --- | --- | --- |
 | **A** or 10 | **B** or 11 | **C** or 12 | **D** or 13 | **E** or 14 | **F** or 15 |
 
->10 x 16<sup>5</sup> + 11 x 16<sup>4</sup> + 12 x 16<sup>3</sup> + 13 x 16<sup>2</sup> 14 x 16<sup>1</sup> + 15 x 16<sup>0</sup>  
+>10 x 16<sup>5</sup> + 11 x 16<sup>4</sup> + 12 x 16<sup>3</sup> + 13 x 16<sup>2</sup> + 14 x 16<sup>1</sup> + 15 x 16<sup>0</sup>  
 >= 10 485 760 + 720 896 + 49 152 + 3 328 + 224 + 15  
 >= 11 259 375
+
+
+
 ## ASCII
 -------
 
