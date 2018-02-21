@@ -68,10 +68,13 @@ For example, to convert the hexadecimal number ABCDEF<sub>16</sub> to decimal, w
 >= 10 485 760 + 720 896 + 49 152 + 3 328 + 224 + 15  
 >= 11 259 375
 
+The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm)
+
 
 
 ## ASCII
 -------
+ASCII, or the American Standard Code for Information Interchange, is a common format used for text files in computers and on the internet. In ASCII, 
 
 ## Unicode
 -------
