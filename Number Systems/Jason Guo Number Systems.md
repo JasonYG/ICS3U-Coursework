@@ -42,17 +42,31 @@ To convert 545<sub>8</sub> to base 10, we would use a process similar to that in
 | --- | --- | --- |
 | 5 | 4 | 5 |
 
->5 x 8<sup>2</sup> + 4 x 8<sup>1</sup> + 5 * 8<sup>2</sup>  
+>5 x 8<sup>2</sup> + 4 x 8<sup>1</sup> + 5 x 8<sup>2</sup>  
 >= 320 + 32 + 5  
 >= 357
 
 The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm)
+
+
+
 ## Hexadecimal
 -------
+Computer programming and computer engineering often use base-sixteen, or hexadecimal, math. Instead of using digits 0 and 1, or 0 to 7, hexadecimal uses digits 0 to 15. However, since we don't have single digits for numbers above 10, we use letters instead. The following are the digits used in hexadecimal:
 
+>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
 
+"A" would be 10, "B" would be 11, and so on until 15.
 
+For example, to convert the hexadecimal number ABCDEF<sub>16</sub> to decimal, we would follow a process similar to octal or binary:
 
+| 16<sup>5</sup> | 16<sup>4</sup> | 16<sup>3</sup> | 16<sup>2</sup> | 16<sup>1</sup> | 16<sup>0</sup> |
+| --- | --- | --- | --- | --- | --- |
+| **A** or 10 | **B** or 11 | **C** or 12 | **D** or 13 | **E** or 14 | **F** or 15 |
+
+>10 x 16<sup>5</sup> + 11 x 16<sup>4</sup> + 12 x 16<sup>3</sup> + 13 x 16<sup>2</sup> 14 x 16<sup>1</sup> + 15 x 16<sup>0</sup>  
+>= 10 485 760 + 720 896 + 49 152 + 3 328 + 224 + 15  
+>= 11 259 375
 ## ASCII
 -------
 
