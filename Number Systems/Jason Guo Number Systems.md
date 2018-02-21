@@ -1,4 +1,4 @@
-#Number Systems
+# Number Systems
 -------
 #### By Jason Guo
 
@@ -25,3 +25,43 @@ For example, 1010101 would be:
 | **1** | 0 | **1** | 0 | **1** | 0 | **1** |
 
 And thus its decimal value would be 64 + 16 + 4 + 1 = **85**.
+
+The source used for this section can be found [here](http://whatis.techtarget.com/definition/binary)
+
+
+
+## Octal
+-------
+Similarly to binary, octal is an older computer-based number system that is base eight. Unlike binary, the digits 0 to 7 are used in octal; otherwise, it is quite similar, however octal uses powers of 8 instead of powers of 2.
+
+For example, 8 in base 10 would be written as 10<sub>8</sub> in octal, where the subscript 8 represents that the octal number system is being used.
+
+To convert 545<sub>8</sub> to base 10, we would use a process similar to that in binary.
+
+| 8<sup>2</sup> | 8<sup>1</sup> | 8<sup>0</sup> |
+| --- | --- | --- |
+| 5 | 4 | 5 |
+
+>5 x 8<sup>2</sup> + 4 x 8<sup>1</sup> + 5 * 8<sup>2</sup>  
+>= 320 + 32 + 5  
+>= 357
+
+The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm)
+## Hexadecimal
+-------
+
+
+
+
+## ASCII
+-------
+
+## Unicode
+-------
+
+
+
+
+
+
+
