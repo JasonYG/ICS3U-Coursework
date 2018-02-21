@@ -5,7 +5,7 @@
 
 
 
-## Binary
+Binary
 ---------
 Binary is a number system with only 2 digits, 0 and 1. They are sometimes respectively refered to as "low" and "high" in digital data memory, storage, processing, and communications.
 
@@ -26,11 +26,11 @@ For example, 1010101 would be:
 
 And thus its decimal value would be 64 + 16 + 4 + 1 = **85**.
 
-The source used for this section can be found [here](http://whatis.techtarget.com/definition/binary)
+The source used for this section can be found [here](http://whatis.techtarget.com/definition/binary).
 
 
 
-## Octal
+Octal
 -------
 Similarly to binary, octal is an older computer-based number system that is base eight. Unlike binary, the digits 0 to 7 are used in octal; otherwise, it is quite similar, however octal uses powers of 8 instead of powers of 2.
 
@@ -46,11 +46,11 @@ To convert 545<sub>8</sub> to base 10, we would use a process similar to that in
 >= 320 + 32 + 5  
 >= 357
 
-The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm)
+The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm).
 
 
 
-## Hexadecimal
+Hexadecimal
 -------
 Computer programming and computer engineering often use base-sixteen, or hexadecimal, math. Instead of using digits 0 and 1, or 0 to 7, hexadecimal uses digits 0 to 15. However, since we don't have single digits for numbers above 10, we use letters instead. The following are the digits used in hexadecimal:
 
@@ -68,20 +68,27 @@ For example, to convert the hexadecimal number ABCDEF<sub>16</sub> to decimal, w
 >= 10 485 760 + 720 896 + 49 152 + 3 328 + 224 + 15  
 >= 11 259 375
 
-The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm)
+The source used for this section can be found [here](http://www.purplemath.com/modules/numbbase3.htm).
 
 
 
-## ASCII
+ASCII
 -------
-ASCII, or the American Standard Code for Information Interchange, is a common format used for text files in computers and on the internet. In ASCII, 
+ASCII, or the American Standard Code for Information Interchange, is a common format used for text files in computers and on the internet. In ASCII, every alphabetic, numeric, and special character is represented with a 7-bit binary number. There are 128 possible characters defined.
 
-## Unicode
+A table with all possible ASCII characters can be found [here](http://www.asciitable.com/). 
+
+ASCII, amazingly, can also be used in creative ways such as making [art](http://copy.r74n.com/ascii-art).
+
+The source used for this section can be found [here](http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange).
+
+Unicode
 -------
 
 
 
-
+Challenge Task(s)
+-------
 
 
 
