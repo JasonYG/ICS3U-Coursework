@@ -82,12 +82,19 @@ ASCII, amazingly, can also be used in creative ways such as making [art](http://
 
 The source used for this section can be found [here](http://whatis.techtarget.com/definition/ASCII-American-Standard-Code-for-Information-Interchange).
 
+
+
 Unicode
 -------
+Despite its popularity, sometimes ASCII can have limitations that may be impractical in certain situations. For example, if someone were to write in Arabic or Chinese, ASCII would be unusable because it contains only letters from the English alphabet. Even if someone were to write in only the English language, ASCII would not contain every letter, punctuation, and technical symbol in common use.
 
+Instead, Unicode was developed to solve this problem. In most modern software providers, Unicode is used and provides a unique number for every single character. Unicode is what allows languages and symbols to be represented in operating systems, search engines, browsers, and more.
 
+As of now, Unicode standard contains 34 168 distinct coded characters from 24 language scripts, which covers the most prominent written languages of the world ([source](http://whatis.techtarget.com/definition/Unicode)). A large table of the Unicode characters can be found [here](https://unicode-table.com/en/#cyrillic).
 
-Challenge Task(s)
+The source used for this section can be found [here](http://unicode.org/standard/WhatIsUnicode.html).
+
+Computer Hardware
 -------
 
 
