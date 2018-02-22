@@ -96,6 +96,24 @@ The source used for this section can be found [here](http://unicode.org/standard
 
 Computer Hardware
 -------
+The following table describes which number system every piece of computer hardware uses:
 
-
-
+| Hardware | Number System |
+| :---: | :--- |
+| CPU | In most modern CPUs, binary is used to represent numbers, with every digit being represented by a physical quantity ("high" or "low" voltage). CPUs use binary to perform complex calculations. | 
+| GPU | GPUs are largely used to manipulate computer graphics and image processing. GPUs process this information as binary. Some video decoding processes accelerated by the GPU include bitstream processing, which uses context-adaptive binary arithmetic coding. |
+| Sound card | Sound cards create stored sound using a Digital to Analogue Convertor (DAC). Sound cards use a changing voltage ("high" and "low") to represent a series of binary numbers. |
+| Microphone | Microphones convert sound waves in changes in voltage. This electrical information is then processed by the sound card, and thus the changing voltages would represent binary numbers. |
+| Speaker | The speaker receives changing voltages from the sound card as a series of binary values. These changing voltages vibrate to reproduce the stored sound of the sound card. |
+| Monitor | In digital images, bytes, or a group of 8 bits, can have 256 possible combinations. These combinations can be used to define 256 levels of colour in images. Each digital image is really composed of many squares, called _picture elements_, or pixels. Each pixel is stored in the computer file, and has a red, green, and blue value. Monitors are simply an output device for displaying these pixels, and thus use binary. |
+| Projector | Since projectors are another type of output device for digital images, they mainly use the binary number system. Many projectors also use a binary encoding scheme to function properly. |
+| Keyboard | When a key is pressed, an electrical signal is sent to the processor in the form of a binary value. Older keyboards would have corresponded closely to ASCII values, however modern keyboards would use more advanced systems of character representation, such as Unicode. |
+| Mouse | Computer mice translate motion into electrical signals that are then interpreted by the computer. In most mice, the processor reads the pulses from infrared sensors on the mouse and converts them into information in the form of binary, which is more usable to the computer. |
+| Scanner | The purpose of a scanner is to analyze an image and process it, and therefore it must "sample" all the colours on the image and convert them into a numerical value (RGB). Thus, scanners use a binary number systems. Black-and-white scanners more easily generate binary information, such as a barcode scanner. |
+| Drawing tablet | Drawing tablets use magnetic signals generated from the stylus to send information which can be converted into coordinate information. Given the nature of drawing tablets, creating digital images, binary must be used to record the RGB values of each individual pixel. |
+| Printer | Printers accept data from the computer in the form of binary, which is then interpreted and printed onto the page. Specific colour values, i.e. RGB values, are used to create an accurate depiction of how the digital image must look on paper.|
+| HDD | Hard drives use magnetism to store binary values to a disk, which can then be stored and accessed later. The number of binary numbers that can be stored determine the "size" of a hard drive (e.g. 1000 mega**bytes**).  |
+| SSD | Unlike hard drives, SSDs use semiconductor chips rather than magnetism to store information. Since there are no moving parts, SSDs are significantly faster than the average hard drive. Information, however, is still stored as binary values, not unlike the hard drive.|
+| Motherboard | Motherboards connect all parts of a computer an allows communication between them. Motherboards send electrical signals for communication, and thus uses the binary number system. |
+| RAM | RAM is often made up of millions of transistors and capacitors. In dynamic random access memory (DRAM), the most common form of computer memory, transistors and capacitors are paired up to create a memory cell. Each of these memory cells represent a single bit of information, and thus RAM uses binary to store information. |
+| Network adapter | Network adapters  |
