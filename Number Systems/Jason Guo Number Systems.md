@@ -116,4 +116,4 @@ The following table describes which number system every piece of computer hardwa
 | SSD | Unlike hard drives, SSDs use semiconductor chips rather than magnetism to store information. Since there are no moving parts, SSDs are significantly faster than the average hard drive. Information, however, is still stored as binary values, not unlike the hard drive.|
 | Motherboard | Motherboards connect all parts of a computer an allows communication between them. Motherboards send electrical signals for communication, and thus uses the binary number system. |
 | RAM | RAM is often made up of millions of transistors and capacitors. In dynamic random access memory (DRAM), the most common form of computer memory, transistors and capacitors are paired up to create a memory cell. Each of these memory cells represent a single bit of information, and thus RAM uses binary to store information. |
-| Network adapter | Network adapters  |
+| Network adapter | Network adapters convert received electrical frequencies into binary information that can be used by the computer. The 1s and 0s would be represented by changes in voltage of the frequencies. |
