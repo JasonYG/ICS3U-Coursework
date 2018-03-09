@@ -8,10 +8,11 @@ void draw() {
   background(255);
   noFill();
 
+  //red
   stroke(#FA8080);
   strokeWeight(30);
   arc(width/2-40, height/3+40, 500, 500, HALF_PI + 0.1, PI + HALF_PI + 0.1);
-  arc(width/2+40, 2*height/3-20, 500, 500, PI + HALF_PI + 0.2, TWO_PI + HALF_PI + 0.1);
+  arc(width/2+40, 2*height/3-10, 500, 500, PI + HALF_PI + 0.2, TWO_PI + HALF_PI + 0.1);
 
   //yellow
   stroke(#D7FA80);
@@ -24,10 +25,16 @@ void draw() {
   strokeWeight(20);
   arc(width/2-40, height/3+25, 500, 500, HALF_PI, PI + HALF_PI-0.2);
   arc(width/2-10, 2*height/3+15, 500, 500, PI + HALF_PI, TWO_PI + HALF_PI-0.2);
-  
+
   //blue
   stroke(#8092FA);
-  strokeWeight(20);
+  strokeWeight(15);
   arc(width/2 - 35, height/3+20, 500, 500, HALF_PI + 0.3, PI + HALF_PI-0.2);
-  
+  arc(width/2 + 30, 2*height/3-40, 500, 500, PI + HALF_PI + 0.1, TWO_PI + HALF_PI-0.1);
+
+  //purple
+  stroke(#C080FA);
+  strokeWeight(10);
+  arc(width/2 - 60, height/3 - 25, 500, 500, HALF_PI, PI + HALF_PI);
+  arc(width/2 + 40, 2*height/3 - 55, 500, 500, PI + HALF_PI - 0.6, TWO_PI + HALF_PI);
 }
