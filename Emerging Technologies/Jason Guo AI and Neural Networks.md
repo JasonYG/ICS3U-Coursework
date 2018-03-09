@@ -10,7 +10,7 @@ The future of mankind is inextricably tied to AI.
 
 
 
-What is a neural network
+What is a Neural Network
 ---
 Neural networks, at the most basic level, take in some input value(s), and return some output value(s). Whether it be an image, your voice, or some numbers and words, neural networks all aim to solve problems, most of which are usually done by people.   
 
@@ -24,3 +24,7 @@ The input layer, of course, would be what goes into the neural network, and the 
 
 Each of the "neurons", or nodes, of a layer are connected to every node in the layer ahead. Information is transmitted from node to node, being manipulated each time, until finally the nodes reach the final layer and produce an output.
 
+Societal Implications
+---
+
+Due to the near limitless functionality of AI and neural networks, 
