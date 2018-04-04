@@ -4,7 +4,7 @@
 
 Introduction
 ---
-Artificial Intelligence (AI) is often thought of as science fiction, a vicarious dream created by the delusional; however, almost all emerging technologies involve AI in some way. [Self driving cars](http://www.businessinsider.com/heres-what-the-future-of-self-driving-cars-realistically-looks-like-2017-7), [voice recognition](https://medium.com/swlh/5-reasons-why-google-assistant-is-the-future-of-ai-11a07b64f981), and facial recognition are only some of the examples of AI technology.  
+Artificial Intelligence (AI) is often thought of as science fiction, a vicarious dream created by the delusional; however, almost all emerging technologies involve AI in some way. [Self driving cars](http://www.businessinsider.com/heres-what-the-future-of-self-driving-cars-realistically-looks-like-2017-7), [voice recognition](https://medium.com/swlh/5-reasons-why-google-assistant-is-the-future-of-ai-11a07b64f981), and [facial recognition](https://www.techemergence.com/facial-recognition-applications/) are only some of the examples of AI technology.  
 
 The future of mankind is inextricably tied to AI.
 
@@ -40,3 +40,22 @@ Economic Implications
 As mentioned previously, blue collar jobs will become obsolete as AI technology develops. The economy of the world will shift from a labour-based system to an information-based system and have the potential for massive growth.
 
 According to some estimates, applications of AI has the potential to double economic growth rates, and improve human productivity by up to 40 percent ([source](https://www.techemergence.com/the-economic-impact-of-artificial-intelligence-an-interview-with-accentures-cto/)).
+
+[There is an excellent infographic on the economic impacts of AI](http://www.businessinsider.com/infographic-ai-effect-on-economy-2017-8). It estimates that AI will add $15.7 trillion to the global economy by 2030.
+
+The following is an excerpt from the infographic:
+
+![Economic Impacts of AI](https://i.imgur.com/ZH0NrJy.jpg)
+
+Environmental Implications
+---
+
+The development of AI has both positive and negative effects on the environment. In many instances, AI can deal with environmental issues that are otherwise impossible to handle by humans. Machines armed with AI can take care of situations hazardous to humans. For example, [Japan has already created earthquake search-and-rescue robots](https://www.popsci.com/technology/article/2011-03/six-robots-could-shape-future-earthquake-search-and-rescue). With AI developments into the future, these robots could become feasible to every situation - not just earthquakes.
+
+The following image is of Japan's Robocue, the Tokyo fire department's rescue-'bot, practising for a rescue operation:
+
+![Robocue](https://www.popsci.com/sites/popsci.com/files/styles/655_1x_/public/import/2013/images/2011/03/save_robot_970_1.jpg?itok=EIMQZXuo)
+
+Many industries are integrated AI technology into their software systems. In [one oil company](http://new.abb.com/control-systems/industry-specific-solutions/oil-gas-and-petrochemicals/using-artificial-intelligence-to-reduce-environmental-impact), for example, AI is being used in their predictive emission software to identify key factors that cause harmful emissions. This software will be used to validate sensors that are responsible for harmful emissions, thus reducing the company's impact on the environment.
+
+With the advent of self-driving car programs, the efficiency of transportation will be drastically increased. At the moment, [transportation is responsible for more than a quarter of greenhouse gas emmissions in the US](https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions). By reducing the number of cars on roads, AI would be cutting down the harmful impacts of cars. However, as current vehicles become obsolete, there will be a surplus of waste as people switch to the newer, more efficient cars. 
