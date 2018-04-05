@@ -59,3 +59,13 @@ The following image is of Japan's Robocue, the Tokyo fire department's rescue-'b
 Many industries are integrated AI technology into their software systems. In [one oil company](http://new.abb.com/control-systems/industry-specific-solutions/oil-gas-and-petrochemicals/using-artificial-intelligence-to-reduce-environmental-impact), for example, AI is being used in their predictive emission software to identify key factors that cause harmful emissions. This software will be used to validate sensors that are responsible for harmful emissions, thus reducing the company's impact on the environment.
 
 With the advent of self-driving car programs, the efficiency of transportation will be drastically increased. At the moment, [transportation is responsible for more than a quarter of greenhouse gas emmissions in the US](https://www.epa.gov/ghgemissions/sources-greenhouse-gas-emissions). By reducing the number of cars on roads, AI would be cutting down the harmful impacts of cars. However, as current vehicles become obsolete, there will be a surplus of waste as people switch to the newer, more efficient cars. 
+
+If meaningful regulations are not implemented to installed to control AI, then resources may be depleted quicker and pollution may be increased. However, with efficient applications of AI, humanity's efforts to preserve the environment could be much easier. According to a report done by the [International Energy Agency](http://www.iea-coal.org.uk/documents/83703/9401/Advanced-sensors-and-smart-controls-for-coal-fired-power-plant,-CCC/251), artificial control systems could reduce nitrous oxide emissions - a harmful greenhouse gas - in Texas by 20 percent.
+
+Further Reading
+---
+[This](https://techcrunch.com/2016/03/21/exploring-the-risks-of-artificial-intelligence/) article further explores the risks of AI. 
+
+For more information on environmental consequences of AI, [this](https://www.greenbiz.com/article/what-artificial-intelligence-means-sustainability) article explores how AI will affect sustainability in the environment.
+
+If you are interested in viewing a simple neural network, [here](https://github.com/JasonYG/Immunotherapy-Neural-Network) is a basic implementation of a back-propagation algorithm.
