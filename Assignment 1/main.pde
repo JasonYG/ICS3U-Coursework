@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.math.BigInteger;
+// useful information: http://voidexception.weebly.com/java-bigdecimal---dealing-with-high-precision-calculations.html
 void settings() {
 }
 
@@ -29,7 +30,7 @@ double calculate_pi() {
   }
   return 1/pi;
 }
-long long factorial(int n) {
+long factorial(int n) {
   if (n == 1 || n == 0) {
     return 1;
   } else {
