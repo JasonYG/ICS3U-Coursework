@@ -1,3 +1,13 @@
+void settings() {
+  size(600, 600);
+}
+void setup() {
+  
+}
+void draw() {
+  
+}
+/*
 import java.math.BigDecimal;
 import java.math.BigInteger;
 // useful information: http://voidexception.weebly.com/java-bigdecimal---dealing-with-high-precision-calculations.html
@@ -40,3 +50,4 @@ long factorial(int n) {
 void setup() {
   println(calculate_pi());
 }
+*/
