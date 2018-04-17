@@ -35,7 +35,7 @@ class Pi {
   }
   BigDecimal calculate() {
     int loopNumber = 1; // The upper bound value of 'k'
-    memoize = new BigDecimal[6*loopNumber];
+    memoize = new BigDecimal[6*loopNumber]; FIX
     BigDecimal one = new BigDecimal("1");
     BigDecimal pi = new BigDecimal("0"); // Return value of this function
     for (int k = 0; k < loopNumber; k++) {
@@ -74,7 +74,7 @@ class Pi {
       denominator = denominator.multiply(f);
       
       BigDecimal twelve = new BigDecimal("12"); // To multiply the fraction
-      BigDecimal fraction = new BigDecimal("1").setScale(digits, RoundingMode.UP);
+      BigDecimal fraction = new BigDecimal("1").setScale(digits, RoundingMode.UP); FIX
       fraction = numerator.divide(denominator, digits, RoundingMode.DOWN); // Numerator / Denominator
       BigDecimal answer = fraction.multiply(twelve); // Intermediary term
       answer = one.divide(answer, digits, RoundingMode.DOWN).setScale(digits);
