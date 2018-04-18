@@ -1,4 +1,4 @@
-Pi test = new Pi(30);
+Pi test = new Pi(22);
 void settings() {
   size(600, 600);
 }

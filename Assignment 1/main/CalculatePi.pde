@@ -35,11 +35,14 @@ class Pi {
   // Method used to compute the square root
   // of a BigDecimal using Newton's method
   BigDecimal root(BigDecimal n) {
-    BigDecimal x = new BigDecimal("800").setScale(digits); // Starts 'x' off with an initial guess of 800
+    BigDecimal x = new BigDecimal("100").setScale(digits*2); // Starts 'x' off with an initial guess of 100
     int i = 0; // Trivial iterator for the loop
+    
     // The method has a quadratic convergence of x^2 + 1,
     // where x == the number of digit places
     int bound = ceil(sqrt(digits)) + 1; 
+    //int bound = digits;
+    
     // Loop repeats 'bound' number of times
     while (i < bound) {
       BigDecimal a = x.pow(2); // Intermediary term
@@ -50,60 +53,61 @@ class Pi {
 
       i++;
     }
+    //println(x);
     return x;
   }
   // Implementation of Chudnovsky's algorithm
   // to calculate digits of pi
   BigDecimal calculate() {
     // FIX THIS NUMBER TO THE CONVERGENCE OF THE CHUDNOVSKY'S ALGORITHM
-    int loopNumber = 50; // The upper bound value of 'k'
+    int loopNumber = 10000; // The upper bound value of 'k'
     memoize = new BigDecimal[6*loopNumber];
-    BigDecimal one = new BigDecimal("1");
+    //BigDecimal one = new BigDecimal("1"); // BigDecimal of 1
     BigDecimal pi = new BigDecimal("0"); // Return value of this function
+    
+    // Constant term in the series
+    BigDecimal c = new BigDecimal("426880");
+    BigDecimal a = new BigDecimal("10005");
+    a = root(a);
+    c = c.multiply(a);
+    
+    // bigSum represents the summation of the terms in the algorithm
+    BigDecimal bigSum = new BigDecimal("0");
+    
     for (int k = 0; k < loopNumber; k++) {
       BigDecimal bigK = new BigDecimal(str(k)); // Changes 'k' into a BigDecimal
-      BigDecimal numerator = new BigDecimal("0").setScale(digits); // Numerator of the equation
-      BigDecimal denominator = new BigDecimal("0").setScale(digits); //Denominator of the equation
-
-      // These variables are represent intermediary terms in the equation
-      BigDecimal a = new BigDecimal("-1").setScale(digits);
-      a = a.pow(k);
-
-      BigDecimal b = new BigDecimal("6").setScale(digits);
-      b = b.multiply(bigK);
-      b = factorial(b);
-
-      BigDecimal c = new BigDecimal("545140134").setScale(digits);
-      c = c.multiply(bigK);
-      c = c.add(new BigDecimal("13591409"));
-
-      numerator = numerator.add(a);
-      numerator = numerator.multiply(b);
-      numerator = numerator.multiply(c);
-
-      BigDecimal d = new BigDecimal("3").setScale(digits);
+      
+      // Terms in the series
+      BigDecimal m = new BigDecimal("0");
+      BigDecimal l = new BigDecimal("13591409");
+      BigDecimal x = new BigDecimal("-262537412640768000");
+      
+      BigDecimal b = new BigDecimal("6");
+      b = b.multiply(factorial(bigK));
+      BigDecimal d = new BigDecimal("3");
       d = d.multiply(bigK);
       d = factorial(d);
+      BigDecimal e = factorial(bigK);
+      e = e.pow(3);
+      BigDecimal f = d.multiply(e);
+      m = m.add(b);
+      m = m.divide(f, digits, RoundingMode.DOWN);
+      
+      BigDecimal g = new BigDecimal("545140134");
+      g = g.multiply(bigK);
+      l = l.add(g);
+  
 
-      BigDecimal e = factorial(bigK).setScale(digits);
-      e.pow(3);
+      x = x.pow(k);
+      // Entire fraction, (m*l)/x
+      BigDecimal fraction = m;
+      fraction = fraction.multiply(l);
+      fraction = fraction.divide(x, digits, RoundingMode.DOWN);
 
-      BigDecimal f = new BigDecimal("640320").setScale(digits);
-      int g = ((3*k) * 2) + 3;
-      f = root(f);
-      f = f.pow(g);
-
-      denominator = denominator.add(d);
-      denominator = denominator.multiply(e);
-      denominator = denominator.multiply(f);
-
-      BigDecimal twelve = new BigDecimal("12"); // To multiply the fraction
-      BigDecimal fraction = numerator.divide(denominator, digits, RoundingMode.DOWN); // Numerator / Denominator
-      BigDecimal answer = fraction.multiply(twelve); // Intermediary term
-
-      pi = pi.add(answer);
+      bigSum = bigSum.add(fraction);
     }
-    pi = one.divide(pi, digits, RoundingMode.DOWN);
-    return pi.setScale(digits, RoundingMode.DOWN);
+    BigDecimal sixthPi = c.divide(bigSum, digits, RoundingMode.DOWN);
+    pi = sixthPi.multiply(new BigDecimal("6"));
+    return pi;
   }
 }
