@@ -12,6 +12,14 @@ class Pi {
     digits = n;
     memoize = new BigDecimal[201];
   }
+  // Writes the input value to a file,
+  // with a BigDecimal as its input
+  void toText(BigDecimal n) {
+    PrintWriter file = createWriter("pi.txt");
+    file.println(n);
+    file.flush();
+    file.close();
+  }
   // Method used to compute the factorial
   // of a BigDecimal
   BigDecimal factorial(BigDecimal n) {
@@ -60,7 +68,7 @@ class Pi {
   // to calculate digits of pi
   BigDecimal calculate() {
     // FIX THIS NUMBER TO THE CONVERGENCE OF THE CHUDNOVSKY'S ALGORITHM
-    int loopNumber = 10000; // The upper bound value of 'k'
+    int loopNumber = 1000; // The upper bound value of 'k'
     memoize = new BigDecimal[6*loopNumber];
     //BigDecimal one = new BigDecimal("1"); // BigDecimal of 1
     BigDecimal pi = new BigDecimal("0"); // Return value of this function

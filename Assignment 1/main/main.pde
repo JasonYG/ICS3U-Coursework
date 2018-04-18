@@ -1,4 +1,4 @@
-Pi test = new Pi(22);
+Pi test = new Pi(2200);
 void settings() {
   size(600, 600);
 }
@@ -7,5 +7,6 @@ void setup() {
 }
 void draw() {
   // INACCURACIES IN DIGITS
-  print(test.calculate());
+  BigDecimal pi = test.calculate();
+  test.toText(pi);
 }
