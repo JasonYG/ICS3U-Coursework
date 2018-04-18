@@ -12,6 +12,14 @@ class Pi {
     digits = n;
     memoize = new BigDecimal[201];
   }
+  // Method to write to text file,
+  // takes in BigDecimal as argument
+  void toText(BigDecimal n) {
+    PrintWriter file = createWriter("pi.txt");
+    file.println(n);
+    file.close();
+  }
+
   // Method used to compute the factorial
   // of a BigDecimal
   BigDecimal factorial(BigDecimal n) {

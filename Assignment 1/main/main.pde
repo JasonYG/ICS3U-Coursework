@@ -7,5 +7,6 @@ void setup() {
 }
 void draw() {
   // INACCURACIES IN DIGITS
-  print(test.calculate());
+  BigDecimal pi = test.calculate();
+  test.toText(pi);
 }
