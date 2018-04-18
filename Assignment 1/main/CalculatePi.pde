@@ -53,61 +53,39 @@ class Pi {
 
       i++;
     }
-    //println(x);
     return x;
   }
   // Implementation of Chudnovsky's algorithm
-  // to calculate digits of pi
-  BigDecimal calculate() {
+  // to calculate digits of pi WITH parameter
+  BigDecimal calculate(long n) {
     // FIX THIS NUMBER TO THE CONVERGENCE OF THE CHUDNOVSKY'S ALGORITHM
-    int loopNumber = 10000; // The upper bound value of 'k'
+    int loopNumber = 1000; // The upper bound value of 'k'
     memoize = new BigDecimal[6*loopNumber];
-    //BigDecimal one = new BigDecimal("1"); // BigDecimal of 1
-    BigDecimal pi = new BigDecimal("0"); // Return value of this function
-    
-    // Constant term in the series
-    BigDecimal c = new BigDecimal("426880");
-    BigDecimal a = new BigDecimal("10005");
-    a = root(a);
-    c = c.multiply(a);
-    
-    // bigSum represents the summation of the terms in the algorithm
-    BigDecimal bigSum = new BigDecimal("0");
-    
-    for (int k = 0; k < loopNumber; k++) {
-      BigDecimal bigK = new BigDecimal(str(k)); // Changes 'k' into a BigDecimal
-      
-      // Terms in the series
-      BigDecimal m = new BigDecimal("0");
-      BigDecimal l = new BigDecimal("13591409");
-      BigDecimal x = new BigDecimal("-262537412640768000");
-      
-      BigDecimal b = new BigDecimal("6");
-      b = b.multiply(factorial(bigK));
-      BigDecimal d = new BigDecimal("3");
-      d = d.multiply(bigK);
-      d = factorial(d);
-      BigDecimal e = factorial(bigK);
-      e = e.pow(3);
-      BigDecimal f = d.multiply(e);
-      m = m.add(b);
-      m = m.divide(f, digits, RoundingMode.DOWN);
-      
-      BigDecimal g = new BigDecimal("545140134");
-      g = g.multiply(bigK);
-      l = l.add(g);
-  
 
-      x = x.pow(k);
-      // Entire fraction, (m*l)/x
-      BigDecimal fraction = m;
-      fraction = fraction.multiply(l);
-      fraction = fraction.divide(x, digits, RoundingMode.DOWN);
-
-      bigSum = bigSum.add(fraction);
+    // Terms in the algorithm
+    BigDecimal k = new BigDecimal("1");
+    BigDecimal a_k = new BigDecimal(str(n));
+    BigDecimal a_sum = new BigDecimal(str(n));
+    BigDecimal b_sum = new BigDecimal("0");
+    BigDecimal c = new BigDecimal("640320");
+    
+    while(true) {
+      // Updates a_k
+      BigDecimal a = new BigDecimal("6");
+      a = a.multiply(k);
+      a = a.subtract(new BigDecimal("5"));
+      a.multiply(new BigDecimal("-1"));
+      BigDecimal b = new BigDecimal("2");
+      b = b.multiply(k);
+      b = b.subtract(new BigDecimal("-1"));
+      BigDecimal c = new BigDecimal()
+      
     }
-    BigDecimal sixthPi = c.divide(bigSum, digits, RoundingMode.DOWN);
-    pi = sixthPi.multiply(new BigDecimal("6"));
-    return pi;
+    
+    return;
+  }
+  // If there is no parameter
+  BigDecimal calculate() {
+    return calculate(1000000);
   }
 }
