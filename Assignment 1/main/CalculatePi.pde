@@ -60,7 +60,8 @@ class Pi {
   // of a BigDecimal with floating point arithmetic
   BigDecimal root(BigDecimal n, BigDecimal one) {
     // Floating point arithmetic to make initial guess
-    BigDecimal floatingPoint = new BigDecimal(str(pow(10, 16)));
+    BigDecimal floatingPoint = new BigDecimal("10");
+    floatingPoint = floatingPoint.pow(16);
 
     // Floating point calculations of n
     BigDecimal a = n.multiply(floatingPoint);
@@ -68,15 +69,33 @@ class Pi {
     BigDecimal nFloat = b.divide(floatingPoint, digits, RoundingMode.DOWN);
 
     // 'x' is the return value of the method
-    BigDecimal d = floatingPoint.multiply(root(nFloat)).setScale(0);
+    BigDecimal j = floatingPoint.multiply(root(nFloat));
+    BigDecimal d = j.multiply(one);
+    BigDecimal x = d.divide(floatingPoint, 0, RoundingMode.FLOOR);
+    BigDecimal nOne = n.multiply(one);
+
+    while (true) {
+      // Updates x
+      BigDecimal oldX = x;
+      BigDecimal e = nOne.divide(x, 0, RoundingMode.FLOOR);
+      e = e.add(x);
+      x = e.divide(new BigDecimal("2"), 0, RoundingMode.FLOOR);
+
+      // Exit condition .compareTo returns 0 if
+      // the objects are equal in value
+      if (x.compareTo(oldX) == 0) {
+        break;
+      }
+    }
+    return x;
   }
   // Implementation of Chudnovsky's algorithm
   // to calculate digits of pi WITH parameter
-  BigDecimal calculate(long n) {
+  BigDecimal calculate(BigInteger n) {
     // FIX THIS NUMBER TO THE CONVERGENCE OF THE CHUDNOVSKY'S ALGORITHM
     int loopNumber = 1000; // The upper bound value of 'k'
     memoize = new BigDecimal[6*loopNumber];
-    BigDecimal bigN = new BigDecimal(str(n));
+    BigDecimal bigN = new BigDecimal(n);
     // Terms in the algorithm
     BigDecimal k = new BigDecimal("1");
     BigDecimal aK = bigN;
@@ -128,14 +147,27 @@ class Pi {
 
     BigDecimal h = new BigDecimal("426880");
     BigDecimal i = new BigDecimal("10005");
-    i = root(i);
+    i = root(i.multiply(bigN), bigN);
+    i = i.multiply(bigN);
     BigDecimal j = h.multiply(i);
     BigDecimal pi = j.divide(total, 0, RoundingMode.FLOOR); 
 
+    toFile(pi);
     return pi;
   }
   // If there is no parameter
   BigDecimal calculate() {
-    return calculate(1000000);
+    // Default argument of function
+    BigInteger defArg = new BigInteger("10");
+    defArg = defArg.pow(1000000);
+    return calculate(defArg);
+  }
+  // Writes the input value to a file,
+  // with a BigDecimal as its input
+  void toFile(BigDecimal n) {
+    PrintWriter file = createWriter("pi.txt");
+    file.println(n);
+    file.flush();
+    file.close();
   }
 }

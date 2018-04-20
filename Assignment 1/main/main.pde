@@ -6,6 +6,7 @@ void setup() {
   noLoop();
 }
 void draw() {
-  // INACCURACIES IN DIGITS
-  print(test.calculate());
+  test.calculate();
+  float timer = millis();
+  println("The number of seconds of this program is: " + str(timer/1000));
 }
