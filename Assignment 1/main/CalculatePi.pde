@@ -5,9 +5,9 @@ import java.math.RoundingMode;
 class Pi {
   int digits; //digits of pi
   BigDecimal[] memoize; //used for factorial function
-
+  
   // Constructor defined with an argument 
-  // that defines the number of digits of PI
+  // that determines the number of digits of PI
   Pi(int n) {
     digits = n;
     memoize = new BigDecimal[201];
@@ -61,7 +61,6 @@ class Pi {
 
       i++;
     }
-    //println(x);
     return x;
   }
   // Method used to compute the square root
@@ -167,7 +166,7 @@ class Pi {
   BigDecimal calculate() {
     // Default argument of function
     BigInteger defArg = new BigInteger("10");
-    defArg = defArg.pow(1000000);
+    defArg = defArg.pow(100000);
     return calculate(defArg);
   }
   // Writes the input value to a file,
