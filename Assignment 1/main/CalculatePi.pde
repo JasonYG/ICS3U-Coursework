@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 class Pi {
   int digits; //digits of pi
   BigDecimal[] memoize; //used for factorial function
-  
+  Boolean calculated = false; // Prevents PI from being repeatedly calculated
   // Constructor defined with an argument 
   // that determines the number of digits of PI
   Pi(int n) {
@@ -115,7 +115,6 @@ class Pi {
       BigDecimal a = new BigDecimal("6");
       a = a.multiply(k);
       a = a.subtract(new BigDecimal("5"));
-      //a.multiply(new BigDecimal("-1"));
       BigDecimal b = new BigDecimal("2");
       b = b.multiply(k);
       b = b.subtract(new BigDecimal("1"));
@@ -159,6 +158,7 @@ class Pi {
     BigDecimal j = h.multiply(i);
     BigDecimal pi = j.divide(total, 0, RoundingMode.FLOOR); 
 
+    calculated = true;
     toFile(pi);
     return pi;
   }
