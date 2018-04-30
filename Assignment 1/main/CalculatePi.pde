@@ -166,7 +166,7 @@ class Pi {
   BigDecimal calculate() {
     // Default argument of function
     BigInteger defArg = new BigInteger("10");
-    defArg = defArg.pow(100000);
+    defArg = defArg.pow(1000000);
     return calculate(defArg);
   }
   // Writes the input value to a file,
