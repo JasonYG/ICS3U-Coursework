@@ -7,7 +7,7 @@
  * @version 1.0 
  */
 
-Pi test = new Pi(1000000);
+Pi test = new Pi();
 BigDecimal pi;
 Display[] digits = new Display[10]; // Array of Display objects to display on screen
 Display visualizePi;

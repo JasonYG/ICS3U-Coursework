@@ -10,16 +10,8 @@ import java.math.RoundingMode;
  * @version 1.0 
  */
 class Pi {
-  int digits; //digits of pi
-  Boolean calculated = false; // Prevents PI from being repeatedly calculated
-
-  /**
-   * Constructor that sets the number of digits of the pi calculation
-   * @param n the number of digits
-   */
-  Pi(int n) {
-    digits = n;
-  }
+  boolean calculated = false; // Prevents PI from being repeatedly calculated
+  private int precision = 100; // Used for the square root method and floating point arithmetic
 
   /**
    * Method that computes the square root of a number
@@ -32,19 +24,19 @@ class Pi {
    * @return The resultant of the square root calculation
    */
   BigDecimal root(BigDecimal n) {
-    BigDecimal x = new BigDecimal("100").setScale(digits*2); // Starts 'x' off with an initial guess of 100
+    BigDecimal x = new BigDecimal("100").setScale(precision); // Starts 'x' off with an initial guess of 100
     int i = 0; // Trivial iterator for the loop
 
     // The method has a quadratic convergence of x^2 + 1,
     // where x == the number of digit places
-    int bound = ceil(sqrt(digits)) + 1; 
+    int bound = ceil(sqrt(precision)) + 1; 
 
     // Loop repeats 'bound' number of times
     while (i < bound) {
       BigDecimal a = x.pow(2); // Intermediary term
       BigDecimal f = a.subtract(n); // Function 'f'
       BigDecimal fPrime = x.multiply(new BigDecimal("2")); // Derivative of function 'f'
-      BigDecimal fraction = f.divide(fPrime, digits, RoundingMode.DOWN); // f/f'
+      BigDecimal fraction = f.divide(fPrime, precision, RoundingMode.DOWN); // f/f'
       x = x.subtract(fraction);
 
       i++;
@@ -67,7 +59,7 @@ class Pi {
     // Floating point calculations of n
     BigDecimal a = n.multiply(floatingPoint);
     BigDecimal b = a.divide(one, 0, RoundingMode.FLOOR);
-    BigDecimal nFloat = b.divide(floatingPoint, digits, RoundingMode.DOWN);
+    BigDecimal nFloat = b.divide(floatingPoint, precision, RoundingMode.DOWN);
 
     // 'x' is the return value of the method
     BigDecimal j = floatingPoint.multiply(root(nFloat));
@@ -169,7 +161,8 @@ class Pi {
    */
   BigDecimal calculate() {
     // Default argument of function
-    BigInteger defArg = new BigInteger(str(digits));
+    BigInteger defArg = new BigInteger("10");
+    defArg = defArg.pow(1000000);
     return calculate(defArg);
   }
   /**
