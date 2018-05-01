@@ -1,3 +1,12 @@
+/**
+ * This program was developed for assignment 1 of the ICS3U course. It calculates
+ * digits of pi using Chudnovsky's algorithm, and visualizes them to the screen.
+ *
+ * @author Jason Guo
+ * @since May 1, 2018
+ * @version 1.0 
+ */
+
 Pi test = new Pi(22);
 BigDecimal pi;
 Display[] digits = new Display[10]; // Array of Display objects to display on screen
