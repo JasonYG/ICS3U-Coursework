@@ -7,7 +7,7 @@
  * @version 1.0 
  */
 
-Pi test = new Pi(22);
+Pi test = new Pi(1000000);
 BigDecimal pi;
 Display[] digits = new Display[10]; // Array of Display objects to display on screen
 Display visualizePi;
@@ -26,19 +26,17 @@ void setup() {
   }
 }
 void draw() {
-  
   if (screen == -1) {
     colorMode(RGB, 255);
     if (!test.calculated) {
-      background(0);
       pi = test.calculate();
+      background(0);
       visualizePi = new Display(pi.toString());
       float timer = millis();
       println("The calculation took " + str(timer/1000) + " seconds");
     } else {
       titleText();
-      /* Adds 0.5 second delay between flashes */
-      delay(500);
+      delay(500); //Adds a 0.5 second delay between updating digits
       updateDigits(pi.toString(), counter);
      
       for (Display digit : digits) {
@@ -58,7 +56,7 @@ void updateDigits(String number, int index) {
     digits[i].shade = (i == digit) ? color(255, 0, 0) : color(255);
   }
 }
-/* Title text */
+
 void titleText() {
   fill(255);
   textAlign(CENTER);
@@ -67,8 +65,7 @@ void titleText() {
   text("DIGITS OF PI", width/2, 150);
 }
 
-// Changes the screen whenever a key
-// is pressed 
+// Changes screen whenever a key is pressed
 void keyPressed() {
   background(0);
   screen *= -1;

@@ -3,41 +3,36 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 
 /**
- * This class calculates the digits of pi
+ * This class calculates the digits of pi 
  *
  * @author Jason Guo
  * @since May 1, 2018
- * @version 1.0 
+ * @version 1.0
  */
 class Pi {
-  int digits; //digits of pi
-  Boolean calculated = false; // Prevents PI from being repeatedly calculated
-
+  boolean calculated = false; // Prevents PI from being repeatedly calculated
+  int digits;
+  
   /**
-   * Constructor that sets the number of digits of the pi calculation
-   * @param n the number of digits
+   * Description
+   *
+   * @param n
+   * @return
    */
   Pi(int n) {
     digits = n;
   }
 
-  /**
-   * Method that computes the square root of a number
-   *
-   * This method uses Newton's method for calculating the square root of a number.
-   * The algorithm has a quadratic convergence of x^2 + 1, where x represents the
-   * number of digits we want to compute
-   *
-   * @param n the BigDecimal object that we want to square root
-   * @return The resultant of the square root calculation
-   */
+  // Method used to compute the square root
+  // of a BigDecimal using Newton's method
   BigDecimal root(BigDecimal n) {
-    BigDecimal x = new BigDecimal("100").setScale(digits*2); // Starts 'x' off with an initial guess of 100
+    BigDecimal x = new BigDecimal("100"); // Starts 'x' off with an initial guess of 100
     int i = 0; // Trivial iterator for the loop
 
     // The method has a quadratic convergence of x^2 + 1,
     // where x == the number of digit places
     int bound = ceil(sqrt(digits)) + 1; 
+    //int bound = digits;
 
     // Loop repeats 'bound' number of times
     while (i < bound) {
@@ -51,14 +46,8 @@ class Pi {
     }
     return x;
   }
-  
-  /**
-   * Method that computes the square root of a number using floating point arithmetic
-   * 
-   * @param n the BigDecimal object that we want to square root
-   * @param one the fixed point that is used to square root n
-   * @return The square root of n as a fixed point number with the one 
-   */
+  // Method used to compute the square root
+  // of a BigDecimal with floating point arithmetic
   BigDecimal root(BigDecimal n, BigDecimal one) {
     // Floating point arithmetic to make initial guess
     BigDecimal floatingPoint = new BigDecimal("10");
@@ -90,14 +79,8 @@ class Pi {
     }
     return x;
   }
-  
-  /**
-   * Implementation of Chudnovsky's algorithm
-   *
-   * @param n the number of digits to calculate to
-   * @uses calculate()
-   * @return pi to n digits
-   */
+  // Implementation of Chudnovsky's algorithm
+  // to calculate digits of pi WITH parameter
   BigDecimal calculate(BigInteger n) {
     // FIX THIS NUMBER TO THE CONVERGENCE OF THE CHUDNOVSKY'S ALGORITHM
     BigDecimal bigN = new BigDecimal(n);
@@ -160,21 +143,14 @@ class Pi {
     toFile(pi);
     return pi;
   }
-  
-  /**
-   * Default implementation of Chudnovsky's algorithm 
-   *
-   * @uses calculate(BigDecimal)
-   * @return BigDecimal
-   */
+  // If there is no parameter
   BigDecimal calculate() {
     // Default argument of function
     BigInteger defArg = new BigInteger(str(digits));
     return calculate(defArg);
   }
-  /**
-   * Method used to write the digits of pi to a text file
-   */
+  // Writes the input value to a file,
+  // with a BigDecimal as its input
   void toFile(BigDecimal n) {
     PrintWriter file = createWriter("pi.txt");
     file.println(n);

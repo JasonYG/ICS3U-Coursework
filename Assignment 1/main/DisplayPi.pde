@@ -1,3 +1,7 @@
+/**
+ *
+ *
+ */
 class Display {
   color shade = color(255, 255, 255); // Color of that digit
   String toDisplay; // String that is to be displayed
