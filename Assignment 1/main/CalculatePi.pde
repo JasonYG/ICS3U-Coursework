@@ -43,7 +43,7 @@ class Pi {
     }
     return x;
   }
-  
+
   /**
    * Method that computes the square root of a number using floating point arithmetic
    * 
@@ -82,7 +82,7 @@ class Pi {
     }
     return x;
   }
-  
+
   /**
    * Implementation of Chudnovsky's algorithm
    *
@@ -152,7 +152,7 @@ class Pi {
     toFile(pi);
     return pi;
   }
-  
+
   /**
    * Default implementation of Chudnovsky's algorithm 
    *

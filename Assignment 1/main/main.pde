@@ -20,10 +20,11 @@ void settings() {
   size(600, 600);
 }
 void setup() {
-  font = createFont("futura light.ttf", 50);
+  font = createFont("futura light.ttf", 100);
   for (int i = 0; i < digits.length; i++) {
     digits[i] = new Display(str(i), width * i/5 % width + 25, i < digits.length/2 ? 300 : 400);
   }
+  loadingScreen();
 }
 void draw() {
   if (screen == -1) {
@@ -48,6 +49,15 @@ void draw() {
     colorMode(HSB, 255);
     visualizePi.visualize();
   }
+}
+void loadingScreen() {
+  background(0);
+  fill(255);
+  textAlign(CENTER);
+  textFont(font);
+  textSize(50);
+  text("CALCULATING PI", width/2, 150);
+  text("Please standby...", width/2, 500);
 }
 // Updates color of digits
 void updateDigits(String number, int index) {
