@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+G:\Documents\ICS 3U\Exercise Set (B)\.metadata\.plugins\org.eclipse.jdt.core
+3068221790.index

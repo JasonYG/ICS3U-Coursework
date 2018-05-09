@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception {
+		File othello = new File("G:\\Documents\\ICS 3U\\Exercise Set (B)\\Exercise_12\\bin\\test.txt");
+		Scanner ot = new Scanner(othello);
+		int totalChars = 0;
+		while (ot.hasNextLine()) {
+			System.out.println(ot.nextLine());
+			totalChars += ot.nextLine().length();
+		}
+		System.out.println("The number of characters in othello is: " + totalChars);
+	}
+}

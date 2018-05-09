@@ -1,0 +1,10 @@
+import java.io.*;
+import java.util.*;
+public class Main {
+	public static void main(String[] args) throws Exception {
+		File othello = new File("G:\\Documents\\ICS 3U\\Exercise Set (B)\\Exercise_12\\bin\\othello.txt");
+		Scanner ot = new Scanner(othello);
+		
+		System.out.println(ot.next());
+	}
+}
