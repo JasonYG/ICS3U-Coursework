@@ -7,6 +7,8 @@ void setup() {
   font = createFont("IBMPlexSans-Medium.ttf", 30);
 }
 void draw() {
+  //System.out.println(char((int(Character.toUpperCase('z')) - 63 + 2) % 26 + 63));
+
   switch (screen) {
   case 0:
     registrationScreen();
