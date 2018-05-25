@@ -1,4 +1,4 @@
-int screen = 0;
+int screen = -1;
 PFont font;
 void settings() {
   size(600, 600);
@@ -8,7 +8,7 @@ void setup() {
 }
 void draw() {
   switch (screen) {
-  case 0:
+  case -1:
     registrationScreen();
     break;
   }
@@ -32,9 +32,12 @@ void registrationScreen() {
   text("Register", 3*width/4, 525);
 }
 void mousePressed() {
-  if (screen == 0) {
+  if (screen == -1) {
     if (mouseX > 0 && mouseX < width/2 && mouseY > 450 && mouseY < height) {
-      Credentials.login();
+      if (Credentials.login()) {
+         screen = -2; 
+         background(255);
+      }
     }
     if (mouseX > width/2 && mouseX < width && mouseY > 450 && mouseY < height) {
       Credentials.register();

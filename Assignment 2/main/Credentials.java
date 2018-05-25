@@ -11,6 +11,108 @@ import java.io.*;
  */
 public class Credentials {
   /**
+   * Checks if the username already exists in the database
+   *
+   * @param username The username to be checked
+   * @return true if the username does not exist, false if it does
+   */
+  private static boolean authenticate(String username) {
+    Scanner usernames;
+    try {
+      File usernameLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\username.txt");
+      usernames = new Scanner(usernameLists);
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    while (usernames.hasNextLine()) {
+      if (username.equals(usernames.nextLine())) {
+        return false;
+      }
+    }
+    return true;
+  }
+  /**
+   * Checks if the username and password are correct
+   *
+   * @param username The username to be checked
+   * @param password The password to be checked
+   * @return true if the username and password are correct, false if they are not
+   */
+  private static boolean authenticate(String username, String password) {
+    Scanner credentials;
+    try {
+      File passwordLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt");
+      credentials = new Scanner(passwordLists);
+    }    
+    catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    while (credentials.hasNextLine()) {
+      if (username.equals(credentials.nextLine())) {
+        //System.out.println(decrypt(credentials.nextLine()));
+        if (password.toUpperCase().equals(decrypt(credentials.nextLine()))) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return false;
+  }
+  /**
+   * Decrypts the password
+   *
+   * @param password The password to be decrypted
+   * @return the decrypted password
+   */
+  public static String decrypt(String password) {
+    char[] singleChars = password.toCharArray();
+    for (int i = 0; i < singleChars.length; i++) {
+      if (((int)Character.toUpperCase(singleChars[i]) - 63 - 3) < 2) {
+        singleChars[i] = (char)(((int)Character.toUpperCase(singleChars[i]) - 63 - 3 + 26) + 63);
+      } else {
+        singleChars[i] = (char)(((int)Character.toUpperCase(singleChars[i]) - 63 - 3) + 63);
+      }
+    }
+    return new String(singleChars);
+  }
+  /**
+   * Encrypts plain text using Caesar cipher
+   *
+   * @param password The password to be encrypted
+   * @return the encrypted password
+   */
+  public static String encrypt(String password) {
+    char[] singleChars = password.toCharArray();
+    for (int i = 0; i < singleChars.length; i++) {
+      singleChars[i] = (char)(((int)Character.toUpperCase(singleChars[i]) - 63 + 3) % 26 + 63);
+    }
+    return new String(singleChars);
+  }
+  /**
+   * Used to log into the program
+   *
+   * @return true if login is successful, false if it is not
+   */
+  public static boolean login() {
+    String username = JOptionPane.showInputDialog("Enter your username");
+    if (authenticate(username)) {
+      JOptionPane.showMessageDialog(null, "Please enter a valid username.");
+      return false;
+    }
+    String password = JOptionPane.showInputDialog("Enter your password");
+    if (authenticate(username, password)) {
+      JOptionPane.showMessageDialog(null, "Login Successful");
+      return true;
+    } else {
+      JOptionPane.showMessageDialog(null, "Invalid password.");
+      return false;
+    }
+  }
+  /**
    * Registers the user's credentials
    */
   public static void register() {
@@ -50,105 +152,5 @@ public class Credentials {
       return;
     }
     JOptionPane.showMessageDialog(null, "Registration successful.");
-  }
-  /**
-   * Checks if the username and password are correct
-   *
-   * @param username The username to be checked
-   * @param password The password to be checked
-   * @return true if the username and password are correct, false if they are not
-   */
-  private static boolean authenticate(String username, String password) {
-    Scanner credentials;
-    try {
-      File passwordLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt");
-      credentials = new Scanner(passwordLists);
-    }    
-    catch (Exception e) {
-      e.printStackTrace();
-      return false;
-    }
-    while (credentials.hasNextLine()) {
-      if (username.equals(credentials.nextLine())) {
-        //System.out.println(decrypt(credentials.nextLine()));
-        if (password.toUpperCase().equals(decrypt(credentials.nextLine()))) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    }
-    return false;
-  }
-  /**
-   * Checks if the username already exists in the database
-   *
-   * @param username The username to be checked
-   * @return true if the username does not exist, false if it does
-   */
-  private static boolean authenticate(String username) {
-    Scanner usernames;
-    try {
-      File usernameLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\username.txt");
-      usernames = new Scanner(usernameLists);
-    }
-    catch (Exception e) {
-      e.printStackTrace();
-      return false;
-    }
-    while (usernames.hasNextLine()) {
-      if (username.equals(usernames.nextLine())) {
-        return false;
-      }
-    }
-    return true;
-  }
-  /**
-   * Used to log into the program
-   */
-  public static void login() {
-    String username = JOptionPane.showInputDialog("Enter your username");
-    if (authenticate(username)) {
-      JOptionPane.showMessageDialog(null, "Please enter a valid username.");
-      return;
-    }
-    String password = JOptionPane.showInputDialog("Enter your password");
-    if (authenticate(username, password)) {
-      JOptionPane.showMessageDialog(null, "Login Successful");
-      return;
-    } else {
-      JOptionPane.showMessageDialog(null, "Invalid password.");
-      return;
-    }
-  }
-  /**
-   * Encrypts plain text using Caesar cipher
-   *
-   * @param password The password to be encrypted
-   * @return the encrypted password
-   */
-  public static String encrypt(String password) {
-    char[] singleChars = password.toCharArray();
-    for (int i = 0; i < singleChars.length; i++) {
-      singleChars[i] = (char)(((int)Character.toUpperCase(singleChars[i]) - 63 + 3) % 26 + 63);
-    }
-    return new String(singleChars);
-  }
-  /**
-   * Decrypts the password
-   *
-   * @param password The password to be decrypted
-   * @return the decrypted password
-   */
-  public static String decrypt(String password) {
-    char[] singleChars = password.toCharArray();
-    for (int i = 0; i < singleChars.length; i++) {
-      if (((int)Character.toUpperCase(singleChars[i]) - 63 - 3) < 2) {
-        singleChars[i] = (char)(((int)Character.toUpperCase(singleChars[i]) - 63 - 3 + 26) + 63);
-      } else {
-        singleChars[i] = (char)(((int)Character.toUpperCase(singleChars[i]) - 63 - 3) + 63);
-      }
-    }
-    return new String(singleChars);
   }
 }
