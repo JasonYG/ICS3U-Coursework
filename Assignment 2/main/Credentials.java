@@ -1,7 +1,5 @@
 import javax.swing.JOptionPane;
-import java.awt.*;
 import java.util.*;
-import java.lang.*;
 import java.io.*;
 /**
  * This class is used to register new users.
@@ -51,8 +49,37 @@ public class Credentials {
       e.printStackTrace();
       return;
     }
+    JOptionPane.showMessageDialog(null, "Registration successful.");
   }
-
+  /**
+   * Checks if the username and password are correct
+   *
+   * @param username The username to be checked
+   * @param password The password to be checked
+   * @return true if the username and password are correct, false if they are not
+   */
+  private static boolean authenticate(String username, String password) {
+    Scanner credentials;
+    try {
+      File passwordLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt");
+      credentials = new Scanner(passwordLists);
+    }    
+    catch (Exception e) {
+      e.printStackTrace();
+      return false;
+    }
+    while (credentials.hasNextLine()) {
+      if (username.equals(credentials.nextLine())) {
+        //System.out.println(decrypt(credentials.nextLine()));
+        if (password.toUpperCase().equals(decrypt(credentials.nextLine()))) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return false;
+  }
   /**
    * Checks if the username already exists in the database
    *
@@ -90,8 +117,8 @@ public class Credentials {
       JOptionPane.showMessageDialog(null, "Login Successful");
       return;
     } else {
-       JOptionPane.showMessageDialog(null, "Invalid password.");
-       return;
+      JOptionPane.showMessageDialog(null, "Invalid password.");
+      return;
     }
   }
   /**
