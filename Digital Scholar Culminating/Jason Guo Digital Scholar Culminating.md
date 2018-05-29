@@ -47,6 +47,8 @@ Envision life in 200 years (as per societal question above)
 
 > What jobs would exist? What would change? What does it look like to have a job/career in this time? Would cartography (either "Code as" or within video games) have an effect on the careers that would exist? If so, why? How? What technological jobs would exist?
 
+In a future where enhanced space travel and interplanetary living are ubiquitous, new jobs would rise with the importance of cartography. Humanity will need detailed renditions of multiply worlds, and thus cartography would become more important than ever. Computer scientists and programmers working in cartography would become a huge career path, and other more labour-based jobs would disappear as technology progresses. Automation would eliminate jobs that used to be done by humans, such as factory and manufacturing work, and the economy would be drastically changed. Jobs in this era would either directly involve technology or use technology in some way. Specifically, if cartography technology develops enough, then most, if not all, jobs will use the technology. A doctor, for example, might use a detailed map of a patient's house to see environmental risks; a lawyer might use a depiction of a crime scene as evidence in court; or an astronaut might look at a digitalzied version of home while exploring the universe. Some examples of technological jobs include computer scientists that research cartography and virtual world building, engineers that incorporate cartography into technologies related to space travel, and graphic designers that help create these virtual worlds.
+
 Postsecondary Opportunities
 -------
 Envision life in 200 years (as per societal question above)
