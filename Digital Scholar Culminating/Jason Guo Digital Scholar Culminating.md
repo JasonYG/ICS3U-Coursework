@@ -60,3 +60,9 @@ Ideally, there would be no formal schooling requirements to use cartography as r
 > What technology would exist to help you with your education?
 
 Specifically with cartography, complex maps and renditions of multiple worlds would help with many aspects of education. In courses such as geography, or even history, cartography would allow students to explore parts of the world or history that are inaccessible. Digital field trips facilitated by developments in technology, in the comforts of a classroom. This would allow for more hands-on, participant learning, as students will be able to contextualize the learning done in the classroom and see the real world applications of what they are learning. In a different course such as biology, a class could "explore" virtual environments and ecosystems to see and experiment with the intricacies of the environment: what would happen if there were too many predators? plants? rabbits? what if we moved a polar bear to Mars? Students will be able to use their creativity to enhance their learning, and use these cartographic technologies for their benefit. Education would become both much more engaging, and much more meaningful. 
+
+References
+-------
+[Source 1](http://mrseidel.com/topics/cartography_article_1.pdf) - The Impact of 1980s and 1990s Video Games on Multimedia Cartography
+
+[Source 2](http://mrseidel.com/topics/cartography_article_2.pdf) - Code as Cartography
