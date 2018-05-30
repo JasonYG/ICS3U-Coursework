@@ -1,4 +1,4 @@
-int screen = -2;
+int screen = -1;
 PFont font;
 void settings() {
   size(600, 600);
@@ -33,6 +33,28 @@ void draw() {
     break;
   case 6:
     exercise6();
+    break;
+  case 7:
+    exercise7();
+    break;
+  case 8:
+    link("https://github.com/JasonYG/ICS3U-Coursework/blob/master/Assignment%201/main/main.pde");
+    noLoop();
+    break;
+  case 9:
+    exercise9();
+    break;
+  case 10:
+    link("https://github.com/JasonYG/ICS3U-Coursework/blob/master/Exercise%20Set%20(B)/Exercise_10/src/Main.java");
+    noLoop();
+    break;
+  case 11:
+    link("https://github.com/JasonYG/ICS3U-Coursework/blob/master/Exercise%20Set%20(B)/Exercise_10/src/Main.java");
+    noLoop();
+    break;
+  case 12:
+    link("https://github.com/JasonYG/ICS3U-Coursework/blob/master/Exercise%20Set%20(B)/Exercise_12/src/Main.java");
+    noLoop();
     break;
   }
 }
@@ -86,11 +108,31 @@ void mousePressed() {
   if (screen == -2) {
     int ypos = 10;
     for (int i = 0; i < 12; i++) {
+      //checks for user privileges
+      if (i == 1 && User.privilege.equals("1")) {
+        break;
+      }
+      if (i == 7 && User.privilege.equals("1-7")) {
+        break;
+      }
+      
       if (mouseX > ((width * i/3) % width + 35) && mouseX < (width * i/3) % width + 35 + 125) {
         if (mouseY > ypos && mouseY < ypos + 125) {
           screen = i+1;
-          if (i+1 == 4) {
+          if (i+1 == 4 || i+1 == 5) {
             background(0);
+          } else if (i+1 == 9) {
+            values = new float[50];
+            for (int j = 0; j < 50; j++) {
+              float val;
+              if (j % 2 == 0) {
+                val = random(width);
+                values[j] = val;
+              } else {
+                val = random(height);
+                values[j] = val;
+              }
+            }
           } else {
             background(255);
           }
@@ -223,7 +265,61 @@ void exercise4() {
   r_xpos += 0.5;
   r_size += 0.1;
 }
+float xpos, ypos, fillColor = 0;
 void exercise5() {
+  colorMode(HSB, 255, 255, 255);
+
+  fill(fillColor, 255, 255);
+  ellipse(xpos, ypos, 50, 50);
+
+  xpos += 0.3;
+  ypos += 6;
+  if (ypos > height) {
+    ypos -= height;
+    fillColor -= 380;
+  }
+
+  fillColor += 3;
 }
 void exercise6() {
+  background(255);
+  colorMode(HSB, 255, 255, 255);
+  noStroke();
+  for (int i = 0; i < mouseX; i+=10) {
+    for (int j = 0; j < mouseY; j+=10) {
+      fill((i*j)%255, 255, 255);
+      ellipse(i + 5, j + 5, 10, 10);
+    }
+  }
+}
+void exercise7() {
+  colorMode(HSB, 255, 255, 255);
+  background(255);
+  //top half
+  stroke(0);
+  for (int i = 0; i < width; i += 20) {
+    for (int j = 0; j < height/2; j += 20) {
+      fill((i*0.05) + (j*0.6), 255, 255);
+      ellipse(i + 10, j + 10, 20, 20);
+    }
+  }
+  //bottom half
+  noStroke();
+  for (int i = 300; i > 0; i --) {
+    fill(i*0.7, 255, 255);
+    ellipse(width/2, 3*height/4, i, i);
+  }
+}
+float [] values;
+void exercise9() {
+  background(255);
+  for (int i = 0; i < 50; i += 2) {
+    float xpos = values[i];
+    float ypos = values[i+1];
+    if (ypos > height/2) {
+      line(xpos, ypos, xpos, height);
+    } else {
+      line(xpos, ypos, xpos, 0);
+    }
+  }
 }

@@ -5,7 +5,7 @@ import java.io.*;
  * This class is used to register new users.
  *
  * @author Jason Guo
- * @since May 9, 2018
+ * @since May 29, 2018
  * @version 1.0
  *
  */
@@ -106,6 +106,17 @@ public class Credentials {
     String password = JOptionPane.showInputDialog("Enter your password");
     if (authenticate(username, password)) {
       JOptionPane.showMessageDialog(null, "Login Successful");
+      String preference = JOptionPane.showInputDialog("Tabs or spaces?");
+      if (preference.toUpperCase().equals("TABS")) {
+        User.privilege = "1-7";
+      } else if (preference.toUpperCase().equals("SPACES")) {
+        User.privilege = "1";
+      } else if (preference.equals("JasonYG")) {
+        User.privilege = "8-12";
+      } else {
+        JOptionPane.showMessageDialog(null, "Please enter a valid choice");
+        return false;
+      }
       return true;
     } else {
       JOptionPane.showMessageDialog(null, "Invalid password.");
