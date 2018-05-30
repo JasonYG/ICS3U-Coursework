@@ -6,6 +6,6 @@
  * @version 1.0
  */
 public class User {
-  static String privilege = "1-7";
+  static String privilege;
   
 }

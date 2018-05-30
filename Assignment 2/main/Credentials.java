@@ -19,7 +19,7 @@ public class Credentials {
   private static boolean authenticate(String username) {
     Scanner usernames;
     try {
-      File usernameLists = new File("C:\\Users\\Jason\\Documents\\ICS 3U\\Assignment 2\\main\\data\\username.txt");
+      File usernameLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\username.txt");
       usernames = new Scanner(usernameLists);
     }
     catch (Exception e) {
@@ -43,7 +43,7 @@ public class Credentials {
   private static boolean authenticate(String username, String password) {
     Scanner credentials;
     try {
-      File passwordLists = new File("C:\\Users\\Jason\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt");
+      File passwordLists = new File("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt");
       credentials = new Scanner(passwordLists);
     }    
     catch (Exception e) {
@@ -143,7 +143,7 @@ public class Credentials {
     }
     //writes username to username.txt
     try {
-      BufferedWriter usernameLists = new BufferedWriter(new FileWriter("G:\\Users\\Jason\\Documents\\ICS 3U\\Assignment 2\\main\\data\\username.txt", true));
+      BufferedWriter usernameLists = new BufferedWriter(new FileWriter("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\username.txt", true));
       usernameLists.write(username + "\n");
       usernameLists.close();
     } 
@@ -153,7 +153,7 @@ public class Credentials {
     }
     //writes encrypted password to password.txt
     try {
-      BufferedWriter passwordLists = new BufferedWriter(new FileWriter("G:\\Users\\Jason\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt", true));
+      BufferedWriter passwordLists = new BufferedWriter(new FileWriter("G:\\Documents\\ICS 3U\\Assignment 2\\main\\data\\password.txt", true));
       passwordLists.write(username + "\n");
       passwordLists.write(encrypt(password) + "\n");
       passwordLists.close();

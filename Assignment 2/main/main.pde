@@ -11,11 +11,9 @@ void draw() {
   case -1:
     registrationScreen();
     break;
-
   case -2:
     exerciseSelection();
     break;
-
   case 1:
     exercise1();
     break;
@@ -115,7 +113,10 @@ void mousePressed() {
       if (i == 7 && User.privilege.equals("1-7")) {
         break;
       }
-      
+      if (i == 12 && User.privilege.equals("8-12")) {
+        break;
+      }
+
       if (mouseX > ((width * i/3) % width + 35) && mouseX < (width * i/3) % width + 35 + 125) {
         if (mouseY > ypos && mouseY < ypos + 125) {
           screen = i+1;
